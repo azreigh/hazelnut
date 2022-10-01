@@ -1,0 +1,12 @@
+#!/usr/bin/brux
+
+print("Using BRUX " + bruxVersion())
+
+donut("include.nut")
+
+setResolution(800, 600)
+setFPS(60)
+
+while (!getQuit() && !apQuit) {
+	update()
+}

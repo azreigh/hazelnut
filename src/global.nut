@@ -1,0 +1,1 @@
+const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
