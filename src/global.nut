@@ -5,7 +5,7 @@ const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 ::hazelWidgetList <- [];
 ::hazelQuit <- false;
 
-::hazelRootWidget <- 0;
+::hazelRootWidget <- null;
 
 ::hazelRegisterWidget <- function(widget) {
     hazelWidgetList.append(widget.weakref());
@@ -13,6 +13,7 @@ const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 }
 
 ::hazelSetRootWidget <- function(widget) {
+    if (hazelRootWidget != null) throw Error("Attempted to set the root widget twice.")
     widget.id = hazelRegisterWidget(widget)
     hazelRootWidget = widget.id;
 }
