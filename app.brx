@@ -2,14 +2,22 @@
 
 print("Using BRUX " + bruxVersion())
 
+setWindowTitle("Hazel Demo")
+setResolution(800, 600)
+setFPS(60)
+
 // Simple way of including everything. 
 donut("include.nut")
 
 hazeldbgSetTheme()
 
-setResolution(800, 600)
-setFPS(60)
+::testLabel <- hazelLabelWidget("Test Label", 64, 64, 20, 20, 100, 100, "Test Parent Label Widget.")
+::testChildLabel <- hazelLabelWidget("Test Child Label", 64, 64, 20, 20, 100, 100, "Test Child Label Widget.")
+
+testLabel.addChild(testChildLabel)
+hazelSetRootWidget(testLabel)
 
 while (!getQuit() && !hazelQuit) {
+	hazelRenderTexture()
 	update()
 }

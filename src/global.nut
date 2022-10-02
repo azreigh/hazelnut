@@ -1,11 +1,18 @@
 const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 
-::hazelTexture <- newTexture(windowW(), windowH());
+::hazelScreenSize <- [screenW(), screenH()];
+::hazelTexture <- newTexture(screenW(), screenH());
 ::hazelWidgetList <- [];
 ::hazelQuit <- false;
 
 ::hazelRootWidget <- 0;
 
+::hazelRegisterWidget <- function(widget) {
+    hazelWidgetList.append(widget.weakref());
+    return hazelWidgetList.len() - 1;
+}
+
 ::hazelSetRootWidget <- function(widget) {
-    hazelRootWidget = widget.weakref();
+    widget.id = hazelRegisterWidget(widget)
+    hazelRootWidget = widget.id;
 }
