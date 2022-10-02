@@ -2,11 +2,14 @@
 
 print("Using BRUX " + bruxVersion())
 
+// Simple way of including everything. 
 donut("include.nut")
+
+hazeldbgSetTheme()
 
 setResolution(800, 600)
 setFPS(60)
 
-while (!getQuit() && !apQuit) {
+while (!getQuit() && !hazelQuit) {
 	update()
 }

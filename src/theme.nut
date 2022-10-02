@@ -1,6 +1,6 @@
-const THEME_PATH = HAZELNUT_DIRECTORY_PATH + "themes/";
+const THEME_PATH = "/usr/share/hazelnut/themes/";
 
-::Theme <- class {
+::hazelTheme <- class {
 	constructor(tName, tBgCol, tTextCol, fontPath, cursorPath) {
 		themeName = tName
 		bgCol = tBgCol
@@ -16,4 +16,11 @@ const THEME_PATH = HAZELNUT_DIRECTORY_PATH + "themes/";
 	sprFont = null
 	font = null
 	sprCursor = null
+}
+
+::hazelCurrentTheme <- 0
+
+::hazeldbgSetTheme <- function() {
+	local themeFile = mergeTable({}, jsonRead(fileRead("themes/breeze_dark.json")))
+	hazelCurrentTheme = hazelTheme(themeFile.themeName, themeFile.bgCol.tointeger(16), themeFile.textCol.tointeger(16), themeFile.fontPath, themeFile.cursorPath)
 }
