@@ -1,2 +1,2 @@
 # Hazel
-Hazel (short for hazelnut) is a framework for creating GUIs within Brux.
+Hazel (short for hazelnut) is a framework for conveniently creating GUIs within Brux.
