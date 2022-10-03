@@ -37,6 +37,9 @@
         widget.id = hazelRegisterWidget(widget);
         widget.parentId = id;
         children.append(widget.id);
+        local parentPosition = hazelWidgetList[widget.parentId].position;
+        widget.position.x += parentPosition.x
+        widget.position.y += parentPosition.y
     }
 }
 
@@ -50,20 +53,12 @@
     }
     
     function draw() {
-        local draw = {
-            x = position.x
-            y = position.y
-        }
-        if (parentId != null && !topLevel) {
-            local parentPosition = hazelWidgetList[parentId].position;
-            draw.x += parentPosition.x
-            draw.y += parentPosition.y
-        }
+        base.draw();
         if (flat) {
             setDrawColor(hazelCurrentTheme.selTextCol);
-            drawRec(draw.x, draw.y, size.width, size.height, true);
+            drawRec(position.x, position.y, size.width, size.height, true);
         }
         
-        drawText(hazelCurrentTheme.font, draw.x, draw.y, text);
+        drawText(hazelCurrentTheme.font, position.x, position.y, text);
     }
 }

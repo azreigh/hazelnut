@@ -7,6 +7,8 @@ const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 
 ::hazelRootWidget <- null;
 
+::hazelRenderCursor <- true;
+
 ::hazelRegisterWidget <- function(widget) {
     hazelWidgetList.append(widget.weakref());
     return hazelWidgetList.len() - 1;
