@@ -3,17 +3,12 @@
     id = null;
     parentId = null;
     
-    position = {
-        x = 0
-        y = 0
-    }
-    
-    size = {
-        width = 0
-        height = 0
-        minWidth = 0
-        minHeight = 0
-    }
+    positionx = null
+    positiony = null
+    width = null
+    height = null
+    minWidth = null
+    minHeight = null
     
     children = [];
     
@@ -23,12 +18,12 @@
     
     constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight) {
         name = _name;
-        position.x = _x
-        position.y = _y
-        size.width = _width
-        size.height = _height
-        size.minWidth = _minWidth
-        size.minHeight = _minHeight
+        positionx = _x
+        positiony = _y
+        width = _width
+        height = _height
+        minWidth = _minWidth
+        minHeight = _minHeight
     }
     
     function draw() {}
@@ -37,9 +32,8 @@
         widget.id = hazelRegisterWidget(widget);
         widget.parentId = id;
         children.append(widget.id);
-        local parentPosition = hazelWidgetList[widget.parentId].position;
-        widget.position.x += parentPosition.x
-        widget.position.y += parentPosition.y
+        widget.positionx += positionx
+        widget.positiony += positiony
     }
 }
 
@@ -56,9 +50,9 @@
         base.draw();
         if (flat) {
             setDrawColor(hazelCurrentTheme.selTextCol);
-            drawRec(position.x, position.y, size.width, size.height, true);
+            drawRec(positionx, positiony, width, height, true);
         }
         
-        drawText(hazelCurrentTheme.font, position.x, position.y, text);
+        drawText(hazelCurrentTheme.font, positionx, positiony, text);
     }
 }
