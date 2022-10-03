@@ -48,7 +48,7 @@
     
     function draw() {
         base.draw();
-        if (flat) {
+        if (!flat) {
             setDrawColor(hazelCurrentTheme.selTextCol);
             drawRec(positionx, positiony, width, height, true);
         }
