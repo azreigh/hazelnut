@@ -1,0 +1,7 @@
+{
+	"themeName": "Breeze Light",
+	"bgCol": "0xF0F0F0FF",
+	"textCol": "0xFFFFFFFF",
+	"fontPath": "res/font.png",
+	"cursorPath": "res/cursor.png"
+}
