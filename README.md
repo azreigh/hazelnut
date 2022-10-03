@@ -1,5 +1,12 @@
 # Hazel
 Hazel (short for hazelnut) is a framework for conveniently creating GUIs within Brux.
 # Why?
-When I decided to start working on Exploria (a file explorer within Brux), I noticed that I'd have to introduce the same aspects for GUIs multiple times.
-On top of that, there would be a chance that said aspects may not be backwards compatible between version.
+To put it simply, I had 2 projects that shared the same code for certain GUI aspects
+
+As a result, I've decided to work on a more general solution that includes all of these aspects.
+# Todos
+- [ ] Basic widget implementation
+- [X] Initial theme support
+- [ ] Layouts
+- [ ] Child system
+- [ ] Godot-like scene system
