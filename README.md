@@ -8,5 +8,5 @@ As a result, I've decided to work on a more general solution that includes all o
 - [ ] Basic widget implementation
 - [X] Initial theme support
 - [ ] Layouts
-- [ ] Child system
+- [X] Child system
 - [ ] Godot-like scene system
