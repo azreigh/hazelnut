@@ -1,8 +1,10 @@
-TEST="invalid.brx"
+TEST="test"
+EXEC="invalid.brx"
 
-if [[ "$1" == "odd" ]]; then
-    TEST="odd.brx"
+echo $1
+if [ -f "test/$1" ]; then
+    EXEC="$1"
 fi
 
 echo $TEST
-cd test && brux $TEST; cd ..
+cd $TEST && brux $EXEC; cd ..
