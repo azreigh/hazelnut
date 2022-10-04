@@ -11,6 +11,7 @@
         widget.draw()
         setDrawColor(hazelCurrentTheme.bgCol)
     }
+    hazelUpdateCursor()
     resetDrawTarget()
     drawImage(hazelTexture, 0, 0)
 }

@@ -12,7 +12,7 @@ donut("include.nut")
 hazeldbgSetTheme()
 
 ::testLabel <- hazelLabelWidget("Test Label", 10, 10, 60, 8, 64, 64, "Test Parent Label Widget.", false)
-::testChildLabel <- hazelLabelWidget("Test Child Label", 10, 20, 252, 8, 64, 64, "Test Child Label Widget but it's flat too!", true)
+::testChildLabel <- hazelLabelWidget("Test Child Label", 10, 10, 252, 8, 64, 64, "Test Child Label Widget but it's flat too!", true)
 
 hazelSetRootWidget(testLabel)
 testLabel.addChild(testChildLabel)

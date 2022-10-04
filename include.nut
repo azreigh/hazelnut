@@ -1,4 +1,5 @@
 // Include everything for the app
+donut("src/cursor.nut")
 donut("src/global.nut")
 donut("src/render.nut")
 donut("src/theme.nut")
