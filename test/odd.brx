@@ -1,0 +1,21 @@
+// I have no idea what this is
+chdir("..")
+
+setWindowTitle("Hazel Test - Odd Layout")
+setResolution(800, 600)
+setFPS(60)
+
+donut("include.nut")
+
+hazeldbgSetTheme()
+
+::upperLabel <- hazelLabelWidget("upperLabel", 10, 10, screenW() - 20, 8, 64, 64, "---- ---- Odd Layout Test ---- ----", false)
+::lowerLabel <- hazelLabelWidget("lowerLabel", 0, screenH() - 20, upperLabel.width, 8, 64, 64, "---- ---- Odd Layout Test ---- ----", false)
+
+hazelSetRootWidget(upperLabel)
+upperLabel.addChild(lowerLabel)
+
+while (!getQuit() && !hazelQuit) {
+	hazelRenderTexture()
+	update()
+}

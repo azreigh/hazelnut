@@ -13,9 +13,13 @@ hazeldbgSetTheme()
 
 ::testLabel <- hazelLabelWidget("Test Label", 10, 10, 60, 8, 64, 64, "Test Parent Label Widget.", false)
 ::testChildLabel <- hazelLabelWidget("Test Child Label", 10, 10, 252, 8, 64, 64, "Test Child Label Widget but it's flat too!", true)
+::testButton <- hazelButtonWidget("Test Button", 10, 30, 80, 80, 64, 64 , function() {
+	print("Button Touched!")
+}, "Button!!!!", false)
 
 hazelSetRootWidget(testLabel)
 testLabel.addChild(testChildLabel)
+testLabel.addChild(testButton)
 
 while (!getQuit() && !hazelQuit) {
 	hazelRenderTexture()

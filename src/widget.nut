@@ -34,6 +34,7 @@
         children.append(widget.id);
         widget.positionx += positionx
         widget.positiony += positiony
+        hazelWidgetPositionList.append([widget.positionx, widget.positiony, widget.positionx + widget.width, widget.positiony + widget.height]);
     }
 }
 
@@ -54,5 +55,14 @@
         }
         
         drawText(hazelCurrentTheme.font, positionx, positiony, text);
+    }
+}
+    
+::hazelButtonWidget <- class extends hazelLabelWidget {
+    func = null;
+        
+    constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _func, _text = "", _flat = false) {
+        base.constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text, _flat);
+        func = _func
     }
 }

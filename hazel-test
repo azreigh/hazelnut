@@ -1,0 +1,8 @@
+TEST="invalid.brx"
+
+if [[ "$1" == "odd" ]]; then
+    TEST="odd.brx"
+fi
+
+echo $TEST
+cd test && brux $TEST; cd ..

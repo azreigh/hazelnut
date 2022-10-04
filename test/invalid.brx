@@ -1,0 +1,18 @@
+chdir("..")
+
+setWindowTitle("Hazel Test - Invalid Test")
+setResolution(800, 600)
+setFPS(60)
+
+donut("include.nut")
+
+hazeldbgSetTheme()
+
+::upperLabel <- hazelLabelWidget("upperLabel", 0, 0, screenW() - 20, 8, 64, 64, "Failed to get a proper Hazel test.", true)
+
+hazelSetRootWidget(upperLabel)
+
+while (!getQuit() && !hazelQuit) {
+	hazelRenderTexture()
+	update()
+}
