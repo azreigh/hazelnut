@@ -1,7 +1,7 @@
 const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 
-::hazelScreenSize <- [screenW(), screenH()];
-::hazelTexture <- newTexture(screenW(), screenH());
+::hazelScreenSize <- [windowW(), windowH()];
+::hazelTexture <- newTexture(windowW(), windowH());
 ::hazelWidgetList <- [];
 ::hazelWidgetPositionList <- [];
 ::hazelQuit <- false;

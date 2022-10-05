@@ -1,6 +1,7 @@
 ::hazelRenderTexture <- function() {
-    local screenSizeCheck = [screenW(), screenH()];
+    local screenSizeCheck = [windowW(), windowH()];
     if (hazelScreenSize[0] != screenSizeCheck[0]) {
+        setResolution(screenSizeCheck[0], screenSizeCheck[1])
         hazelTexture = newTexture(screenSizeCheck[0], screenSizeCheck[1])
         hazelScreenSize = screenSizeCheck
     }
