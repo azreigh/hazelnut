@@ -7,6 +7,6 @@ As a result, I've decided to work on a more general solution that includes all o
 # Todos
 - [ ] Basic widget implementation
 - [X] Initial theme support
-- [ ] Layouts
+- [ ] Qt Framework-like Layouts
 - [X] Child system
 - [ ] Godot-like scene system
