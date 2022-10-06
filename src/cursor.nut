@@ -9,6 +9,7 @@
 	if (mousePress(0)) {
 		foreach (index, value in hazelWidgetPositionList) {
 			if (value[0] <= mouseX() && value[1] <= mouseY() && value[3] >= mouseY() && value[2] >= mouseX()) {
+				hazelSelectedWidget = index;
 				if (hazelWidgetList[index].rawin("func")) {
 					hazelWidgetList[index].func();
 				}

@@ -4,7 +4,9 @@ const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 ::hazelTexture <- newTexture(windowW(), windowH());
 ::hazelWidgetList <- [];
 ::hazelWidgetPositionList <- [];
+::hazelSelectedWidget <- -1;
 ::hazelQuit <- false;
+::hazelHandleInputs <- true;
 
 ::hazelRootWidget <- null;
 
@@ -20,4 +22,12 @@ const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
     widget.id = hazelRegisterWidget(widget)
     hazelRootWidget = widget.id;
     hazelWidgetPositionList.append([widget.positionx, widget.positiony, widget.positionx + widget.width, widget.positiony + widget.height]);
+}
+
+::hazelInputHandler <- function() {
+    local inputs = [];
+    if (hazelSelectedWidget != -1 && hazelHandleInputs) {
+        inputs.append(anyKeyPress());
+        hazelWidgetList[hazelSelectedWidget].input(inputs)
+    }
 }

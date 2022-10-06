@@ -36,6 +36,8 @@
         widget.positiony += positiony
         hazelWidgetPositionList.append([widget.positionx, widget.positiony, widget.positionx + widget.width, widget.positiony + widget.height]);
     }
+    
+    function input(inputs) {}
 }
 
 ::hazelLabelWidget <- class extends hazelBaseWidget {
@@ -45,6 +47,15 @@
         base.constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight);
         text = _text;
         flat = _flat;
+        local tmptxt = split(text, "\n")
+        local highestLen = 0
+        foreach (line in tmptxt) {
+            if (line.len() > highestLen) {
+                highestLen = line.len()
+            }
+        }
+        width = highestLen * 6
+        height = tmptxt.len() * 8
     }
     
     function draw() {
@@ -64,5 +75,20 @@
     constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _func, _text = "", _flat = false) {
         base.constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text, _flat);
         func = _func
+    }
+}
+
+::hazelTextboxWidget <- class extends hazelLabelWidget {
+    constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text = "", _flat = false) {
+        base.constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text, _flat);
+    }
+    
+    function input(inputs) {
+        foreach (input in inputs) {
+            local tmp = keyString(input)
+            if (tmp != "") {
+                text += tmp
+            }
+        }
     }
 }

@@ -11,17 +11,20 @@ donut("include.nut")
 
 hazeldbgSetTheme()
 
-::testLabel <- hazelLabelWidget("Test Label", 10, 10, 146, 8, 64, 64, "Test Parent Label Widget.", false)
-::testChildLabel <- hazelLabelWidget("Test Child Label", 10, 10, 252, 8, 64, 64, "Test Child Label Widget but it's flat too!", true)
+::testLabel <- hazelLabelWidget("Test Label", 10, 10, 146, 8, 64, 64, "Test Parent Label Widget.\nIt's weird!", false)
+::testChildLabel <- hazelLabelWidget("Test Child Label", 10, 20, 252, 8, 64, 64, "Test Child Label Widget but it's flat too!", true)
 ::testButton <- hazelButtonWidget("Test Button", 10, 30, 40, 10, 64, 64 , function() {
 	print("Button Touched!")
 }, "Button!", false)
+::testTextbox <- hazelTextboxWidget("Test Child Label", 10, 50, 252, 8, 64, 64, "Text", true)
 
 hazelSetRootWidget(testLabel)
 testLabel.addChild(testChildLabel)
 testLabel.addChild(testButton)
+testLabel.addChild(testTextbox)
 
 while (!getQuit() && !hazelQuit) {
 	hazelRenderTexture()
+	hazelInputHandler()
 	update()
 }
