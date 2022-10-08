@@ -1,2 +1,2 @@
-// Hazel install script for linux.
+# Hazel install script for linux.
 sudo cp -r . /usr/share/hazel
