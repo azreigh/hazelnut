@@ -120,7 +120,7 @@
                     }
                     break;
             }
-            resizeToText();
         }
+        resizeToText();
     }
 }
