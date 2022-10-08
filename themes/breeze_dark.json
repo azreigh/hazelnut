@@ -3,6 +3,6 @@
 	"bgCol": "0x31363BFF",
 	"textCol": "0xCFCFC2FF",
 	"selTextCol": "0xCFCFC2FF",
-	"fontPath": "res/font.png",
-	"cursorPath": "res/cursor.png"
+	"fontPath": "/usr/share/hazel/res/font.png",
+	"cursorPath": "/usr/share/hazel/res/cursor.png"
 }

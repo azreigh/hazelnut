@@ -22,7 +22,7 @@ const THEME_PATH = "/usr/share/hazelnut/themes/";
 
 ::hazelCurrentTheme <- 0
 
-::hazeldbgSetTheme <- function() {
-	local themeFile = mergeTable({}, jsonRead(fileRead("themes/breeze_dark.json")))
+::hazelSetTheme <- function() {
+	local themeFile = mergeTable({}, jsonRead(fileRead("/usr/share/hazel/themes/breeze_dark.json")))
 	hazelCurrentTheme = hazelTheme(themeFile.themeName, themeFile.bgCol.tointeger(16), themeFile.textCol.tointeger(16), themeFile.selTextCol.tointeger(16), themeFile.fontPath, themeFile.cursorPath)
 }
