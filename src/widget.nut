@@ -76,10 +76,8 @@
         textLineLengths.clear()
         textLineCount = tmptxt.len()
         local highestLen = 0
-        print(textLineCount)
         foreach (line in tmptxt) {
             textLineLengths.append(line.len())
-            print(line + " " + line.len())
             if (line.len() > highestLen) {
                 highestLen = line.len()
             }
