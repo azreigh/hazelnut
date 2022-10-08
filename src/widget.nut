@@ -43,19 +43,19 @@
 ::hazelLabelWidget <- class extends hazelBaseWidget {
     text = "";
     flat = false;
+    
+    textLineCount = 0;
+    textLineLengths = null;
+    
+    internalCursorPosition = null; // X - 0, Y - 1
+    
     constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text = "", _flat = false) {
         base.constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight);
         text = _text;
         flat = _flat;
-        local tmptxt = split(text, "\n")
-        local highestLen = 0
-        foreach (line in tmptxt) {
-            if (line.len() > highestLen) {
-                highestLen = line.len()
-            }
-        }
-        width = highestLen * 6
-        height = tmptxt.len() * 8
+        internalCursorPosition = [-1, -1];
+        textLineLengths = [];
+        resizeToText();
     }
     
     function draw() {
@@ -66,6 +66,23 @@
         }
         
         drawText(hazelCurrentTheme.font, positionx, positiony, text);
+    }
+    
+    function resizeToText() {
+        local tmptxt = split(text, "\n")
+        textLineLengths.clear()
+        textLineCount = tmptxt.len()
+        local highestLen = 0
+        print(textLineCount)
+        foreach (line in tmptxt) {
+            textLineLengths.append(line.len())
+            print(line + " " + line.len())
+            if (line.len() > highestLen) {
+                highestLen = line.len()
+            }
+        }
+        width = highestLen * 6
+        height = tmptxt.len() * 8
     }
 }
     
@@ -85,9 +102,16 @@
     
     function input(inputs) {
         foreach (input in inputs) {
-            local tmp = keyString(input)
-            if (tmp != "") {
-                text += tmp
+            switch (input) {
+                case k_backspace:
+                    if (text.len() > 0) text = text.slice(0, text.len()-1); // TEMP
+                    break;
+                default:
+                    local tmp = keyString(input)
+                    if (tmp != "") {
+                        text += tmp
+                    }
+                    break;
             }
         }
     }
