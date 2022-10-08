@@ -16,7 +16,7 @@ hazeldbgSetTheme()
 ::testButton <- hazelButtonWidget("Test Button", 10, 30, 40, 10, 64, 64 , function() {
 	print("Button Touched!")
 }, "Button!", false)
-::testTextbox <- hazelTextboxWidget("Test Child Label", 10, 50, 252, 8, 64, 64, "Text", true)
+::testTextbox <- hazelTextboxWidget("Test Child Label", 10, 50, 252, 8, 64, 64, "Text", false)
 
 hazelSetRootWidget(testLabel)
 testLabel.addChild(testChildLabel)

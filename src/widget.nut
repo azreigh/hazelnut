@@ -106,6 +106,12 @@
                 case k_backspace:
                     if (text.len() > 0) text = text.slice(0, text.len()-1); // TEMP
                     break;
+                case k_tab:
+                    text += "\t";
+                    break;
+                case k_enter:
+                    text += "\n";
+                    break;
                 default:
                     local tmp = keyString(input)
                     if (tmp != "") {
@@ -113,6 +119,7 @@
                     }
                     break;
             }
+            resizeToText();
         }
     }
 }
