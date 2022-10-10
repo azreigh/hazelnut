@@ -7,6 +7,7 @@ const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
 ::hazelSelectedWidget <- -1;
 ::hazelQuit <- false;
 ::hazelHandleInputs <- true;
+::hazelAllowManualWidgetSelection <- true;
 
 ::hazelRootWidget <- null;
 
