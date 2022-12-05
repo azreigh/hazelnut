@@ -3,6 +3,6 @@
 	"bgCol": "0xF0F0F0FF",
 	"textCol": "0xFFFFFFFF",
 	"selTextCol": "0xFFFFFFFF",
-	"fontPath": "%s/res/font.png",
-	"cursorPath": "%s/res/cursor.png"
+	"fontPath": "%s/res/HazelFont.png",
+	"cursorPath": "%s/res/HazelCursor.png"
 }
