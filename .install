@@ -1,2 +1,3 @@
 # Hazel install script for linux.
-sudo cp -r . /usr/share/hazel
+echo "Install script disabled."
+# sudo cp -r . /usr/share/hazel

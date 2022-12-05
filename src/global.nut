@@ -1,4 +1,5 @@
-const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut/";
+if (hazelDebug) const HAZELNUT_DIRECTORY_PATH = "/usr/share/hazelnut"; // DEBUG
+else const HAZELNUT_DIRECTORY_PATH = "."; // DEBUG
 
 ::hazelScreenSize <- [windowW(), windowH()];
 ::hazelTexture <- newTexture(windowW(), windowH());

@@ -4,7 +4,7 @@
 ::hazelUpdateCursor <- function() {
 	if(!hazelRenderCursor) return; //If the cursor is disabled.
 
-	drawSprite(hazelCurrentTheme.sprCursor, 0, mouseX(), mouseY()) //Draw the cursor.
+	if (hazelCurrentTheme.sprCursor != null) drawSprite(hazelCurrentTheme.sprCursor, 0, mouseX(), mouseY()) //Draw the cursor.
 	
 	if (mousePress(0)) {
 		foreach (index, value in hazelWidgetPositionList) {

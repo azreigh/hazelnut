@@ -1,10 +1,10 @@
 #!/usr/bin/brux
 
-print("Using BRUX " + bruxVersion())
-
 setWindowTitle("Hazel Demo")
 setResolution(800, 600)
 setFPS(60)
+
+::hazelDebug <- true;
 
 // Simple way of including everything. 
 donut("include.nut")

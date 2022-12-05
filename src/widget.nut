@@ -67,7 +67,7 @@
             drawRec(positionx, positiony, width, height, true);
         }
         
-        drawText(hazelCurrentTheme.font, positionx, positiony, text);
+        if (hazelCurrentTheme.font != null) drawText(hazelCurrentTheme.font, positionx, positiony, text);
     }
     
     function resizeToText() {
@@ -122,5 +122,11 @@
             }
         }
         resizeToText();
+    }
+}
+
+::hazelProgressBarWidget <- class extends hazelLabelWidget {
+    constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text = "", _flat = false, _constSize = false) {
+        base.constructor(_name, _x, _y, _width, _height, _minWidth, _minHeight, _text, _flat, _constSize);
     }
 }

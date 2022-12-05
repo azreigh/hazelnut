@@ -1,4 +1,5 @@
-const THEME_PATH = "/usr/share/hazelnut/themes/";
+if (hazelDebug) const THEME_PATH = "/usr/share/hazelnut/themes"; // DEBUG
+else const THEME_PATH = "./themes"; // DEBUG
 
 ::hazelTheme <- class {
 	constructor(tName, tBgCol, tTextCol, tSelTextCol, fontPath, cursorPath) {
@@ -6,9 +7,23 @@ const THEME_PATH = "/usr/share/hazelnut/themes/";
 		bgCol = tBgCol
 		textCol = tTextCol
 		selTextCol = tSelTextCol
-		sprFont = newSprite(fontPath, 6, 8, 0, 0, 0, 0)
-		font = newFont(sprFont, 0, 0, true, 0)
-		sprCursor = newSprite(cursorPath, 10, 13, 0, 0, 0, 0)
+		print(fontPath)
+		print(cursorPath)
+		print(fileExists(fontPath))
+		print(fileExists(cursorPath))
+		if (fontPath.find("%s") != null) fontPath = format(fontPath, THEME_PATH);
+		if (cursorPath.find("%s") != null) cursorPath = format(cursorPath, THEME_PATH);
+		print(fontPath)
+		print(cursorPath)
+		print(fileExists(fontPath))
+		print(fileExists(cursorPath))
+		if (fileExists(fontPath)) {
+			sprFont = newSprite(fontPath, 6, 8, 0, 0, 0, 0);
+			font = newFont(sprFont, 0, 0, true, 0);
+		}
+		if (fileExists(cursorPath)) {
+			sprCursor = newSprite(cursorPath, 10, 13, 0, 0, 0, 0);
+		}
 	}
 
 	themeName = null
@@ -23,6 +38,7 @@ const THEME_PATH = "/usr/share/hazelnut/themes/";
 ::hazelCurrentTheme <- 0
 
 ::hazelSetTheme <- function() {
-	local themeFile = mergeTable({}, jsonRead(fileRead("/usr/share/hazel/themes/breeze_dark.json")))
+	print("hi")
+	local themeFile = mergeTable({}, jsonRead(fileRead(THEME_PATH + "/breeze_dark.json")))
 	hazelCurrentTheme = hazelTheme(themeFile.themeName, themeFile.bgCol.tointeger(16), themeFile.textCol.tointeger(16), themeFile.selTextCol.tointeger(16), themeFile.fontPath, themeFile.cursorPath)
 }

@@ -5,9 +5,11 @@ setWindowTitle("Hazel Test - Odd Layout")
 setResolution(800, 600)
 setFPS(60)
 
+::hazelDebug <- true
+
 donut("include.nut")
 
-hazeldbgSetTheme()
+hazelSetTheme()
 
 ::upperLabel <- hazelLabelWidget("upperLabel", 10, 10, screenW() - 20, 8, 64, 64, "---- ---- Odd Layout Test ---- ----", false)
 ::lowerLabel <- hazelLabelWidget("lowerLabel", 0, screenH() - 20, upperLabel.width, 8, 64, 64, "---- ---- Odd Layout Test ---- ----", false)
