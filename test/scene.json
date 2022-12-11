@@ -1,0 +1,12 @@
+{
+    "winlayout": "horizontal",
+    "root": "0",
+    "widgets": {
+        "0": {
+            "widgettype": "hazelLabelWidget",
+            "argtypes": ["string", "int", "int", "int", "int", "int", "int", "string", "bool"],
+            "args": ["TestMainWidgetFromScene", "0", "0", "300", "200", "300", "200", "Hello World!", true],
+            "children": []
+        }
+    }
+}

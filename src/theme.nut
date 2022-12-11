@@ -7,16 +7,10 @@ else const THEME_PATH = "./themes"; // DEBUG
 		bgCol = tBgCol
 		textCol = tTextCol
 		selTextCol = tSelTextCol
-		print(fontPath)
-		print(cursorPath)
-		print(fileExists(fontPath))
-		print(fileExists(cursorPath))
+
 		if (fontPath.find("%s") != null) fontPath = format(fontPath, THEME_PATH);
 		if (cursorPath.find("%s") != null) cursorPath = format(cursorPath, THEME_PATH);
-		print(fontPath)
-		print(cursorPath)
-		print(fileExists(fontPath))
-		print(fileExists(cursorPath))
+
 		if (fileExists(fontPath)) {
 			sprFont = newSprite(fontPath, 6, 8, 0, 0, 0, 0);
 			font = newFont(sprFont, 0, 0, true, 0);

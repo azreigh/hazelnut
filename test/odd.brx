@@ -9,8 +9,6 @@ setFPS(60)
 
 donut("include.nut")
 
-hazelSetTheme()
-
 ::upperLabel <- hazelLabelWidget("upperLabel", 10, 10, screenW() - 20, 8, 64, 64, "---- ---- Odd Layout Test ---- ----", false)
 ::lowerLabel <- hazelLabelWidget("lowerLabel", 0, screenH() - 20, upperLabel.width, 8, 64, 64, "---- ---- Odd Layout Test ---- ----", false)
 

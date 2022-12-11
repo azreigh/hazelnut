@@ -2,24 +2,21 @@
 
 // What the hippity hoppity hiff is this nonsensical code
 try {
-    local hazelDebugEval = hazelDebug; // If HazelDebug doesn't exist, this throws an exception to force HazelDebug to become false
+    local hazelDebugEval = hazelDebug; // If hazelDebug doesn't exist, this throws an exception to force hazelDebug to become false
 }
 catch(exception) {
     ::hazelDebug <- false;
 }
 
-if (hazelDebug) {
-    donut("src/cursor.nut")
-    donut("src/global.nut")
-    donut("src/render.nut")
-    donut("src/theme.nut")
-    donut("src/util.nut")
-    donut("src/widget.nut")
-} else {
-    donut("/usr/share/hazel/src/cursor.nut")
-    donut("/usr/share/hazel/src/global.nut")
-    donut("/usr/share/hazel/src/render.nut")
-    donut("/usr/share/hazel/src/theme.nut")
-    donut("/usr/share/hazel/src/util.nut")
-    donut("/usr/share/hazel/src/widget.nut")
+local srcDir = "./src"
+if (!hazelDebug) {
+    srcDir = "/usr/share/hazel/src"
 }
+
+donut(srcDir + "/cursor.nut")
+donut(srcDir + "/global.nut")
+donut(srcDir + "/render.nut")
+donut(srcDir + "/scene.nut")
+donut(srcDir + "/theme.nut")
+donut(srcDir + "/util.nut")
+donut(srcDir + "/widget.nut")  

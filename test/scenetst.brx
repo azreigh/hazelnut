@@ -1,0 +1,17 @@
+// I have no idea what this is
+chdir("..")
+
+setWindowTitle("Hazel Test - Odd Layout")
+setResolution(800, 600)
+setFPS(60)
+
+::hazelDebug <- true
+
+donut("include.nut")
+
+loadScene("test/scene.json")
+
+while (!getQuit() && !hazelQuit) {
+	hazelRenderTexture()
+	update()
+}

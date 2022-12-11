@@ -5,4 +5,4 @@ if [ -f "test/$1" ]; then
     EXEC="$1"
 fi
 
-brux $TEST/$EXEC
+cd test && brux $EXEC; cd ..

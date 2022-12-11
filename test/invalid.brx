@@ -8,8 +8,6 @@ setFPS(60)
 
 donut("include.nut")
 
-hazelSetTheme()
-
 ::upperLabel <- hazelLabelWidget("upperLabel", 0, 0, screenW() - 20, 8, 64, 64, "Failed to get a proper Hazel test.", true)
 
 hazelSetRootWidget(upperLabel)

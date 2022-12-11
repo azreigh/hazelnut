@@ -9,8 +9,6 @@ setFPS(60)
 // Simple way of including everything. 
 donut("include.nut")
 
-hazelSetTheme()
-
 ::testLabel <- hazelLabelWidget("Test Label", 10, 10, 146, 8, 64, 64, "Test Parent Label Widget.\nIt's weird!", false)
 ::testChildLabel <- hazelLabelWidget("Test Child Label", 10, 20, 252, 8, 64, 64, "Test Child Label Widget but it's flat too!", true)
 ::testButton <- hazelButtonWidget("Test Button", 10, 30, 40, 10, 64, 64 , function() {
