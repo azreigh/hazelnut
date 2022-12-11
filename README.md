@@ -9,4 +9,4 @@ As a result, I've decided to work on a more general solution that includes all o
 - [X] Initial theme support
 - [ ] Qt Framework-like Layouts
 - [X] Child system
-- [ ] Godot-like scene system
+- [X] Scene system
